@@ -1,0 +1,266 @@
+var('a11, a12, a13, a14, a15, a16, a21, a22, a23, a24, a25, a26, a31, a32, a33, a34, a35, a36, a41, a42, a43, a44, a45, a46, a51, a52, a53, a54, a55, a56, a61, a62, a63, a64, a65, a66')
+var('b11, b12, b13, b14, b15, b21, b22, b23, b24, b25, b31, b32, b33, b34, b35, b41, b42, b43, b44, b45, b51, b52, b53, b54, b55')
+
+# A*B=C school book multiplications
+
+c_11=a11*b11+a12*b21+a13*b31+a14*b41+a15*b51
+c_12=a11*b12+a12*b22+a13*b32+a14*b42+a15*b52
+c_13=a11*b13+a12*b23+a13*b33+a14*b43+a15*b53
+c_14=a11*b14+a12*b24+a13*b34+a14*b44+a15*b54
+c_15=a11*b15+a12*b25+a13*b35+a14*b45+a15*b55
+
+c_21=a21*b11+a22*b21+a23*b31+a24*b41+a25*b51
+c_22=a21*b12+a22*b22+a23*b32+a24*b42+a25*b52
+c_23=a21*b13+a22*b23+a23*b33+a24*b43+a25*b53
+c_24=a21*b14+a22*b24+a23*b34+a24*b44+a25*b54
+c_25=a21*b15+a22*b25+a23*b35+a24*b45+a25*b55
+
+c_31=a31*b11+a32*b21+a33*b31+a34*b41+a35*b51
+c_32=a31*b12+a32*b22+a33*b32+a34*b42+a35*b52
+c_33=a31*b13+a32*b23+a33*b33+a34*b43+a35*b53
+c_34=a31*b14+a32*b24+a33*b34+a34*b44+a35*b54
+c_35=a31*b15+a32*b25+a33*b35+a34*b45+a35*b55
+
+c_41=a41*b11+a42*b21+a43*b31+a44*b41+a45*b51
+c_42=a41*b12+a42*b22+a43*b32+a44*b42+a45*b52
+c_43=a41*b13+a42*b23+a43*b33+a44*b43+a45*b53
+c_44=a41*b14+a42*b24+a43*b34+a44*b44+a45*b54
+c_45=a41*b15+a42*b25+a43*b35+a44*b45+a45*b55
+
+c_51=a51*b11+a52*b21+a53*b31+a54*b41+a55*b51
+c_52=a51*b12+a52*b22+a53*b32+a54*b42+a55*b52
+c_53=a51*b13+a52*b23+a53*b33+a54*b43+a55*b53
+c_54=a51*b14+a52*b24+a53*b34+a54*b44+a55*b54
+c_55=a51*b15+a52*b25+a53*b35+a54*b45+a55*b55
+
+c_61=a61*b11+a62*b21+a63*b31+a64*b41+a65*b51
+c_62=a61*b12+a62*b22+a63*b32+a64*b42+a65*b52
+c_63=a61*b13+a62*b23+a63*b33+a64*b43+a65*b53
+c_64=a61*b14+a62*b24+a63*b34+a64*b44+a65*b54
+c_65=a61*b15+a62*b25+a63*b35+a64*b45+a65*b55
+
+
+p1=  ( a11 + b21 ) * ( a12 + b12 )
+p2=	 ( a21 + b21 ) * ( a22 + b12 )
+p3=  ( a31 + b21 ) * ( a32 + b12 )
+p4=  ( a41 + b21 ) * ( a42 + b12 )
+p5=  ( a51 + b21 ) * ( a52 + b12 )
+p6=  ( a61 + b21 ) * ( a62 + b12 )
+
+p7=   ( a11 + b31 ) * ( a13 + b13 )
+p8=   ( a21 + b31 ) * ( a23 + b13 )
+p9=   ( a31 + b31 ) * ( a33 + b13 )
+p10=  ( a41 + b31 ) * ( a43 + b13 )
+p11=  ( a51 + b31 ) * ( a53 + b13 )
+p12=  ( a61 + b31 ) * ( a63 + b13 )
+
+p13=  ( a12 + b32 ) * ( a13 + b23 )
+p14=  ( a22 + b32 ) * ( a23 + b23 )
+p15=  ( a32 + b32 ) * ( a33 + b23 )
+p16=  ( a42 + b32 ) * ( a43 + b23 )
+p17=  ( a52 + b32 ) * ( a53 + b23 )
+p18=  ( a62 + b32 ) * ( a63 + b23 )
+
+p19=  a11 * ( b11 - b12 - b13 - a12 - a13 )
+p20=  a21 * ( b11 - b12 - b13 - a22 - a23 )
+p21=  a31 * ( b11 - b12 - b13 - a32 - a33 )
+p22=  a41 * ( b11 - b12 - b13 - a42 - a43 )
+p23=  a51 * ( b11 - b12 - b13 - a52 - a53 )
+p24=  a61 * ( b11 - b12 - b13 - a62 - a63 )
+
+p25=  a12 * ( b22 - b21 - b23 - a11 - a13 )
+p26=  a22 * ( b22 - b21 - b23 - a21 - a23 )
+p27=  a32 * ( b22 - b21 - b23 - a31 - a33 )
+p28=  a42 * ( b22 - b21 - b23 - a41 - a43 )
+p29=  a52 * ( b22 - b21 - b23 - a51 - a53 )
+p30=  a62 * ( b22 - b21 - b23 - a61 - a63 )
+
+p31=  a13 * ( b33 - b31 - b32 - a11 - a12 )
+p32=  a23 * ( b33 - b31 - b32 - a21 - a22 )
+p33=  a33 * ( b33 - b31 - b32 - a31 - a32 )
+p34=  a43 * ( b33 - b31 - b32 - a41 - a42 )
+p35=  a53 * ( b33 - b31 - b32 - a51 - a52 )
+p36=  a63 * ( b33 - b31 - b32 - a61 - a62 )
+
+p37=  b12*b21
+p38=  b13*b31
+p39=  b23*b32
+
+p40=  ( a11 + b21 - b24 ) * ( - a12 - b12 + b14 - b15 )
+p41=  ( a21 + b21 - b24 ) * ( - a22 - b12 + b14 - b15 )
+p42=  ( a31 + b21 - b24 ) * ( - a32 - b12 + b14 - b15 )
+p43=  ( a41 + b21 - b24 ) * ( - a42 - b12 + b14 - b15 )
+p44=  ( a51 + b21 - b24 ) * ( - a52 - b12 + b14 - b15 )
+p45=  ( a61 + b21 - b24 ) * ( - a62 - b12 + b14 - b15 )
+
+p46=  ( a12 + b32 + b34 - b35 ) * ( - a13 - b23 + b25)
+p47=  ( a22 + b32 + b34 - b35 ) * ( - a23 - b23 + b25)
+p48=  ( a32 + b32 + b34 - b35 ) * ( - a33 - b23 + b25)
+p49=  ( a42 + b32 + b34 - b35 ) * ( - a43 - b23 + b25)
+p50=  ( a52 + b32 + b34 - b35 ) * ( - a53 - b23 + b25)
+p51=  ( a62 + b32 + b34 - b35 ) * ( - a63 - b23 + b25)
+
+p52=  ( a11 + b31 - b34 ) * ( - a13 - b13 + b15 )
+p53=  ( a21 + b31 - b34 ) * ( - a23 - b13 + b15 )
+p54=  ( a31 + b31 - b34 ) * ( - a33 - b13 + b15 )
+p55=  ( a41 + b31 - b34 ) * ( - a43 - b13 + b15 )
+p56=  ( a51 + b31 - b34 ) * ( - a53 - b13 + b15 )
+p57=  ( a61 + b31 - b34 ) * ( - a63 - b13 + b15 )
+
+p58=  ( b21 - b24 ) * ( - b12 + b14 - b15 ) 
+p59=  ( b31 - b34 ) * ( - b13 + b15 )
+p60=  ( b32 + b34 - b35 ) * ( -b23 + b25 )
+
+p61=  a14 * ( b41 + a15 )
+p62=  a24 * ( b41 + a25 )
+p63=  a34 * ( b41 + a35 )
+p64=  a44 * ( b41 + a45 )
+p65=  a54 * ( b41 + a55 )
+p66=  a64 * ( b41 + a65 )
+
+p67=  a15 * ( b51 - a14 )
+p68=  a25 * ( b51 - a24 )
+p69=  a35 * ( b51 - a34 )
+p70=  a45 * ( b51 - a44 )
+p71=  a55 * ( b51 - a54 )
+p72=  a65 * ( b51 - a64 )
+
+p73=  ( a14 + b52 ) * ( a15 + b41 + b42 ) 
+p74=  ( a24 + b52 ) * ( a25 + b41 + b42 )
+p75=  ( a34 + b52 ) * ( a35 + b41 + b42 )
+p76=  ( a44 + b52 ) * ( a45 + b41 + b42 )
+p77=  ( a54 + b52 ) * ( a55 + b41 + b42 )
+p78=  ( a64 + b52 ) * ( a65 + b41 + b42 )
+
+p79=  ( a14 + b53 ) * ( a15 + b41 + b43 )
+p80=  ( a24 + b53 ) * ( a25 + b41 + b43 )
+p81=  ( a34 + b53 ) * ( a35 + b41 + b43 )
+p82=  ( a44 + b53 ) * ( a45 + b41 + b43 )
+p83=  ( a54 + b53 ) * ( a55 + b41 + b43 )
+p84=  ( a64 + b53 ) * ( a65 + b41 + b43 )
+
+p85=  ( a14 + b54 ) * ( a15 + b41 + b44 )
+p86=  ( a24 + b54 ) * ( a25 + b41 + b44 )
+p87=  ( a34 + b54 ) * ( a35 + b41 + b44 )
+p88=  ( a44 + b54 ) * ( a45 + b41 + b44 )
+p89=  ( a54 + b54 ) * ( a55 + b41 + b44 )
+p90=  ( a64 + b54 ) * ( a65 + b41 + b44 )
+
+p91=  ( a14 + b55 ) * ( a15 + b41 + b45 )
+p92=  ( a24 + b55 ) * ( a25 + b41 + b45 )
+p93=  ( a34 + b55 ) * ( a35 + b41 + b45 )
+p94=  ( a44 + b55 ) * ( a45 + b41 + b45 )
+p95=  ( a54 + b55 ) * ( a55 + b41 + b45 )
+p96=  ( a64 + b55 ) * ( a65 + b41 + b45 )
+
+p97=  b52 * ( b41 + b42 )
+p98=  b53 * ( b41 + b43 )
+p99=  b54 * ( b41 + b44 )
+p100= b55 * ( b41 + b45 )
+
+c11= p1 + p7  + p19 -p37 -p38 + p61 + p67
+c21= p2 + p8  + p20 -p37 -p38 + p62 + p68
+c31= p3 + p9  + p21 -p37 -p38 + p63 + p69
+c41= p4 + p10 + p22 -p37 -p38 + p64 + p70
+c51= p5 + p11 + p23 -p37 -p38 + p65 + p71
+c61= p6 + p12 + p24 -p37 -p38 + p66 + p72
+	
+c12= p1 + p13 + p25 - p37 - p39 + p73  - p61  -p97
+c22= p2 + p14 + p26 - p37 - p39 + p74  - p62  -p97
+c32= p3 + p15 + p27 - p37 - p39 + p75  - p63  -p97
+c42= p4 + p16 + p28 - p37 - p39 + p76  - p64  -p97
+c52= p5 + p17 + p29 - p37 - p39 + p77  - p65  -p97
+c62= p6 + p18 + p30 - p37 - p39 + p78  - p66  -p97
+	
+c13= p7  + p13 + p31 - p38 - p39 + p79  - p61  - p98
+c23= p8  + p14 + p32 - p38 - p39 + p80  - p62  - p98
+c33= p9  + p15 + p33 - p38 - p39 + p81  - p63  - p98
+c43= p10 + p16 + p34 - p38 - p39 + p82  - p64  - p98
+c53= p11 + p17 + p35 - p38 - p39 + p83  - p65  - p98
+c63= p12 + p18 + p36 - p38 - p39 + p84  - p66  - p98
+	
+c14= p1 + p7  + p40  + p52 - p37 - p38 - p58 - p59 + p85 - p61 - p99
+c24= p2 + p8  + p41  + p53 - p37 - p38 - p58 - p59 + p86 - p62 - p99
+c34= p3 + p9  + p42  + p54 - p37 - p38 - p58 - p59 + p87 - p63 - p99
+c44= p4 + p10 + p43  + p55 - p37 - p38 - p58 - p59 + p88 - p64 - p99
+c54= p5 + p11 + p44  + p56 - p37 - p38 - p58 - p59 + p89 - p65 - p99
+c64= p6 + p12 + p45  + p57 - p37 - p38 - p58 - p59 + p90 - p66 - p99
+
+c15= p7  + p13 + p46 + p52 - p38 - p39 - p59 - p60 + p91 - p61 - p100
+c25= p8  + p14 + p47 + p53 - p38 - p39 - p59 - p60 + p92 - p62 - p100
+c35= p9  + p15 + p48 + p54 - p38 - p39 - p59 - p60 + p93 - p63 - p100
+c45= p10 + p16 + p49 + p55 - p38 - p39 - p59 - p60 + p94 - p64 - p100
+c55= p11 + p17 + p50 + p56 - p38 - p39 - p59 - p60 + p95 - p65 - p100
+c65= p12 + p18 + p51 + p57 - p38 - p39 - p59 - p60 + p96 - p66 - p100
+
+
+
+# check if the computations are true or not
+print(c11.full_simplify())
+print(bool(c11.full_simplify()==c_11))
+print(c12.full_simplify())
+print(bool(c12.full_simplify()==c_12))
+print(c13.full_simplify())
+print(bool(c13.full_simplify()==c_13))
+print(c14.full_simplify())
+print(bool(c14.full_simplify()==c_14))
+print(c15.full_simplify())
+print(bool(c15.full_simplify()==c_15))
+
+print(c21.full_simplify())
+print(bool(c21.full_simplify()==c_21))
+print(c22.full_simplify())
+print(bool(c22.full_simplify()==c_22))
+print(c23.full_simplify())
+print(bool(c23.full_simplify()==c_23))
+print(c24.full_simplify())
+print(bool(c24.full_simplify()==c_24))
+print(c25.full_simplify())
+print(bool(c25.full_simplify()==c_25))
+
+print(c31.full_simplify())
+print(bool(c31.full_simplify()==c_31))
+print(c32.full_simplify())
+print(bool(c32.full_simplify()==c_32))
+print(c33.full_simplify())
+print(bool(c33.full_simplify()==c_33))
+print(c34.full_simplify())
+print(bool(c34.full_simplify()==c_34))
+print(c35.full_simplify())
+print(bool(c35.full_simplify()==c_35))
+  
+print(c41.full_simplify())
+print(bool(c41.full_simplify()==c_41))
+print(c42.full_simplify())
+print(bool(c42.full_simplify()==c_42))
+print(c43.full_simplify())
+print(bool(c43.full_simplify()==c_43))
+print(c44.full_simplify())
+print(bool(c44.full_simplify()==c_44))
+print(c45.full_simplify())
+print(bool(c45.full_simplify()==c_45))
+      
+print(c51.full_simplify())
+print(bool(c51.full_simplify()==c_51))
+print(c52.full_simplify())
+print(bool(c52.full_simplify()==c_52))
+print(c53.full_simplify())
+print(bool(c53.full_simplify()==c_53))
+print(c54.full_simplify())
+print(bool(c54.full_simplify()==c_54))
+print(c55.full_simplify())
+print(bool(c55.full_simplify()==c_54))
+      
+print(c61.full_simplify())
+print(bool(c61.full_simplify()==c_61))
+print(c62.full_simplify())
+print(bool(c62.full_simplify()==c_62))
+print(c63.full_simplify())
+print(bool(c63.full_simplify()==c_63))
+print(c64.full_simplify())
+print(bool(c64.full_simplify()==c_64))
+print(c65.full_simplify())
+print(bool(c65.full_simplify()==c_65))
+
+
+
