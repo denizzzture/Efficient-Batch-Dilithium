@@ -249,7 +249,7 @@ print(bool(c53.full_simplify()==c_53))
 print(c54.full_simplify())
 print(bool(c54.full_simplify()==c_54))
 print(c55.full_simplify())
-print(bool(c55.full_simplify()==c_54))
+print(bool(c55.full_simplify()==c_55))
       
 print(c61.full_simplify())
 print(bool(c61.full_simplify()==c_61))
