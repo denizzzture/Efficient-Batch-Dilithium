@@ -32,14 +32,10 @@ int crypto_sign_verify(const uint8_t *sig, size_t siglen,
 int crypto_sign_open(uint8_t *m, size_t *mlen,
                      const uint8_t *sm, size_t smlen,
                      const uint8_t *pk);
-int crypto_sign_signature_20(uint8_t *sig,
-                          size_t *siglen,
+int crypto_sign_signature_20(uint8_t *sigs[],
+                          size_t *siglens,
                           uint8_t* msgs[],
                           size_t mlens[],
+                          poly p[],
                           const uint8_t *sk);
-int crypto_sign_original(uint8_t *sm,
-                size_t *smlen,
-                const uint8_t *m,
-                size_t mlen,
-                const uint8_t *sk);
 #endif

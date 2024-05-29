@@ -1,0 +1,149 @@
+int mult_p4(polyveck C[K], polyvecl mat[K], polyvecl s1hats[K], poly p[]){
+    // C transpose is taken here
+  poly addition, addition2, addition3, addition4, subtraction;
+  for (int i = 0; i < 4; i++) {
+      poly_add(&addition, &s1hats[0].vec[0], &mat[i].vec[1]);
+      poly_pointwise_montgomery(&p[2 * i], &mat[i].vec[0], &addition);
+
+      poly_add(&addition, &s1hats[0].vec[2], &mat[i].vec[3]);
+      poly_pointwise_montgomery(&p[2 * i + 1], &mat[i].vec[2], &addition);
+  }
+
+
+  int index = 8;
+  for (int i = 1; i <= 3; i++) {
+      poly_add(&addition, &s1hats[0].vec[0], &s1hats[i].vec[0]);
+      poly_pointwise_montgomery(&p[index], &s1hats[i].vec[1], &addition);
+      index++;
+
+      poly_add(&addition, &s1hats[0].vec[2], &s1hats[i].vec[2]);
+      poly_pointwise_montgomery(&p[index], &s1hats[i].vec[3], &addition);
+      index++;
+  }
+  index = 14;
+  for (int i = 0; i < 4; i++) {
+      poly_sub(&subtraction, &s1hats[0].vec[1], &mat[i].vec[0]);
+      poly_pointwise_montgomery(&p[index], &mat[i].vec[1], &subtraction);
+      index++;
+
+      poly_sub(&subtraction, &s1hats[0].vec[3], &mat[i].vec[2]);
+      poly_pointwise_montgomery(&p[index], &mat[i].vec[3], &subtraction);
+      index++;
+  }
+  index = 22;
+
+  for (int i = 0; i < 4; i++) {
+      for (int j = 1; j <= 3; j += 2) {
+
+          poly_add(&addition, &mat[i].vec[j - 1], &s1hats[j / 2 + 1].vec[j]);
+
+          poly *poly_array[] = {&mat[i].vec[j], &s1hats[0].vec[j - 1], &s1hats[j / 2 + 1].vec[j - 1]};
+          poly_sum(&addition2, poly_array, 3);
+
+          poly_pointwise_montgomery(&p[index], &addition, &addition2);
+          index++;
+      }
+
+      for (int j = 1; j <= 3; j += 2) {
+
+          poly_add(&addition, &mat[i].vec[2 + (j - 1)], &s1hats[j / 2 + 1].vec[3]);
+
+          poly *poly_array[] = {&mat[i].vec[3], &s1hats[0].vec[2], &s1hats[j / 2 + 1].vec[2]};
+          poly_sum(&addition2, poly_array, 3);
+
+          poly_pointwise_montgomery(&p[index], &addition, &addition2);
+          index++;
+      }
+  }
+  
+	
+	poly *poly_array24[] = {&p[0], &p[1], &p15, &p16};
+	poly_sum(&C[0].vec[0], poly_array24, 4);
+	
+	
+	poly_add(&addition, &p23,&p24);
+	poly *poly_array25[] = { &p[0], &p[1], &p[8], &p[9]};
+	poly_sum(&addition4, poly_array25, 4);
+
+	poly_sub(&C[1].vec[0], &addition, &addition4);
+	
+	poly_add(&addition, &p25,&p26);
+	poly *poly_array26[] = { &p[0], &p[1], &p[10], &p[11]};
+	poly_sum(&addition4, poly_array26, 4);
+
+	poly_sub(&C[2].vec[0], &addition, &addition4);
+	
+	poly_add(&addition, &p27,&p28);
+	poly *poly_array27[] = { &p[0], &p[1], &p[12], &p[13]};
+	poly_sum(&addition4, poly_array27, 4);
+
+	poly_sub(&C[3].vec[0], &addition, &addition4);
+ 
+ 
+	poly *poly_array28[] = {&p[2], &p[3], &p17, &p18};
+	poly_sum(&C[0].vec[1], poly_array28, 4);
+	
+	
+	poly_add(&addition, &p29,&p30);
+	poly *poly_array29[] = { &p[2], &p[3], &p[8], &p[9]};
+	poly_sum(&addition4, poly_array29, 4);
+
+	poly_sub(&C[1].vec[1], &addition, &addition4);
+
+	poly_add(&addition, &p31,&p32);
+	poly *poly_array30[] = { &p[2], &p[3], &p[10], &p[11]};
+	poly_sum(&addition4, poly_array30, 4);
+
+	poly_sub(&C[2].vec[1], &addition, &addition4);
+    
+	poly_add(&addition, &p33,&p34);
+	poly *poly_array31[] = { &p[2], &p[3], &p[12], &p[13]};
+	poly_sum(&addition4, poly_array31, 4);
+
+	poly_sub(&C[3].vec[1], &addition, &addition4);
+
+
+	poly *poly_array32[] = {&p[4], &p[5], &p19, &p20};
+	poly_sum(&C[0].vec[2], poly_array32, 4);
+	
+	poly_add(&addition, &p35,&p36);
+	poly *poly_array33[] = { &p[4], &p[5], &p[8], &p[9]};
+	poly_sum(&addition4, poly_array33, 4);
+
+	poly_sub(&C[1].vec[2], &addition, &addition4);
+	
+	poly_add(&addition, &p37,&p38);
+	poly *poly_array34[] = { &p[4], &p[5], &p[10], &p[11]};
+	poly_sum(&addition4, poly_array34, 4);
+
+	poly_sub(&C[2].vec[2], &addition, &addition4);
+	
+	poly_add(&addition, &p39,&p40);
+	poly *poly_array35[] = { &p[4], &p[5], &p[12], &p[13]};
+	poly_sum(&addition4, poly_array35, 4);
+
+	poly_sub(&C[3].vec[2], &addition, &addition4);
+
+	poly *poly_array36[] = {&p[6], &p[7], &p21, &p22};
+	poly_sum(&C[0].vec[3], poly_array36, 4);
+
+	poly_add(&addition, &p41,&p42);
+	poly *poly_array37[] = { &p[6], &p[7], &p[8], &p[9]};
+	poly_sum(&addition4, poly_array37, 4);
+
+	poly_sub(&C[1].vec[3], &addition, &addition4);
+	
+	poly_add(&addition, &p43,&p44);
+	poly *poly_array38[] = { &p[6], &p[7], &p[10], &p[11]};
+	poly_sum(&addition4, poly_array38, 4);
+
+	poly_sub(&C[2].vec[3], &addition, &addition4);
+    
+	poly_add(&addition, &p45,&p46);
+	poly *poly_array39[] = { &p[6], &p[7], &p[12], &p[13]};
+	poly_sum(&addition4, poly_array39, 4);
+
+	poly_sub(&C[3].vec[3], &addition, &addition4);
+
+  return 0;
+}

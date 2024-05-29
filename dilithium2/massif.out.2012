@@ -1,0 +1,1631 @@
+desc: --stacks=yes
+cmd: ./Batch
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=9531486
+mem_heap_B=538832
+mem_heap_extra_B=58216
+mem_stacks_B=6936
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=17024745
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=340504
+heap_tree=peak
+n6: 615607 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n6: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 27944 in 26 places, all below massif's threshold (1.00%)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n2: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n0: 13896 in 7 places, all below massif's threshold (1.00%)
+ n0: 31741 in 36 places, all below massif's threshold (1.00%)
+ n1: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n0: 11264 in 4 places, all below massif's threshold (1.00%)
+ n1: 10240 0x10F7DF: crypto_sign_signature_20 (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 10240 0x10945C: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+#-----------
+snapshot=3
+#-----------
+time=27291337
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=34187572
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284520
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=39664244
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=285560
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=46233011
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=56155465
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=60925631
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=67808813
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=72579251
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284568
+heap_tree=detailed
+n6: 615607 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n6: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 27944 in 26 places, all below massif's threshold (1.00%)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n2: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n0: 13896 in 7 places, all below massif's threshold (1.00%)
+ n0: 31741 in 36 places, all below massif's threshold (1.00%)
+ n1: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n0: 11264 in 4 places, all below massif's threshold (1.00%)
+ n1: 10240 0x10F7DF: crypto_sign_signature_20 (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 10240 0x10945C: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+#-----------
+snapshot=11
+#-----------
+time=81058532
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=86354328
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=285560
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=93766914
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=100123896
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=336456
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=104362423
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=335400
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=111782385
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=117083204
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=122378106
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=129793403
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=detailed
+n6: 615607 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n6: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 27944 in 26 places, all below massif's threshold (1.00%)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n2: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n0: 13896 in 7 places, all below massif's threshold (1.00%)
+ n0: 31741 in 36 places, all below massif's threshold (1.00%)
+ n1: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n0: 11264 in 4 places, all below massif's threshold (1.00%)
+ n2: 10240 0x10F7DF: crypto_sign_signature_20 (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 10240 0x109483: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=138214812
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=285560
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=144510409
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=detailed
+n6: 615607 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n6: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 27944 in 26 places, all below massif's threshold (1.00%)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n2: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n0: 13896 in 7 places, all below massif's threshold (1.00%)
+ n0: 31741 in 36 places, all below massif's threshold (1.00%)
+ n1: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n0: 11264 in 4 places, all below massif's threshold (1.00%)
+ n2: 10240 0x10F7DF: crypto_sign_signature_20 (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 10240 0x109483: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=22
+#-----------
+time=150806228
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=158676284
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=163400740
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284600
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=172844768
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=340504
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=180714650
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284552
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=187010234
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=284584
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=194887291
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=335320
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=199617003
+mem_heap_B=615607
+mem_heap_extra_B=59041
+mem_stacks_B=335368
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=205920214
+mem_heap_B=603117
+mem_heap_extra_B=58723
+mem_stacks_B=40744
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=215756791
+mem_heap_B=603348
+mem_heap_extra_B=58716
+mem_stacks_B=39576
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=220875216
+mem_heap_B=603480
+mem_heap_extra_B=58728
+mem_stacks_B=40744
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=228553933
+mem_heap_B=603678
+mem_heap_extra_B=58722
+mem_stacks_B=39560
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=233672026
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=241344581
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56488
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=246461891
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=254138593
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=259256146
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56264
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=269485852
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=277159476
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55320
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=284831956
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56488
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=289947876
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=297622554
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56376
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=305295438
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55224
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=310410311
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56376
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=318084435
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=325758545
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55320
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=333430861
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=detailed
+n5: 600631 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n7: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n0: 19096 in 25 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+  n1: 8848 0x4A1B8E3: CRYPTO_THREAD_lock_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8848 in 18 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n3: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n1: 8208 0x4A0E322: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8208 in 3 places, all below massif's threshold (1.00%)
+  n0: 5688 in 6 places, all below massif's threshold (1.00%)
+ n0: 27005 in 38 places, all below massif's threshold (1.00%)
+ n2: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 8192 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n2: 8192 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 8192 0x4A1714E: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+      n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 8192 0x4A18752: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 8192 0x49C6136: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 8192 0x49C6AFC: ERR_set_mark (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 8192 0x4973021: CONF_modules_load_file_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 8192 0x4A17F5F: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+             n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+              n1: 8192 0x4A189C5: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+               n1: 8192 0x4AEDFEC: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                n1: 8192 0x49EE197: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                 n1: 8192 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                  n1: 8192 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                   n1: 8192 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                    n0: 8192 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 3072 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=338545722
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=342784259
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=347022802
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=351263728
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56264
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=355502263
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=359740807
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=363979349
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56376
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=368217883
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55320
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=372456710
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55224
+heap_tree=detailed
+n5: 600631 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n7: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n0: 19096 in 25 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+  n1: 8848 0x4A1B8E3: CRYPTO_THREAD_lock_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8848 in 18 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n3: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n1: 8208 0x4A0E322: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8208 in 3 places, all below massif's threshold (1.00%)
+  n0: 5688 in 6 places, all below massif's threshold (1.00%)
+ n0: 27005 in 38 places, all below massif's threshold (1.00%)
+ n2: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 8192 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n2: 8192 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 8192 0x4A1714E: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+      n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 8192 0x4A18752: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 8192 0x49C6136: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 8192 0x49C6AFC: ERR_set_mark (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 8192 0x4973021: CONF_modules_load_file_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 8192 0x4A17F5F: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+             n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+              n1: 8192 0x4A189C5: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+               n1: 8192 0x4AEDFEC: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                n1: 8192 0x49EE197: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                 n1: 8192 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                  n1: 8192 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                   n1: 8192 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                    n0: 8192 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 3072 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=376695263
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=380933793
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=385172673
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56264
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=389411203
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55224
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=393649740
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=397890378
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=402129419
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56232
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=406367952
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=410606828
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55224
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=414845370
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=detailed
+n5: 600631 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n7: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n0: 19096 in 25 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+  n1: 8848 0x4A1B8E3: CRYPTO_THREAD_lock_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8848 in 18 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n3: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n1: 8208 0x4A0E322: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8208 in 3 places, all below massif's threshold (1.00%)
+  n0: 5688 in 6 places, all below massif's threshold (1.00%)
+ n0: 27005 in 38 places, all below massif's threshold (1.00%)
+ n2: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 8192 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n2: 8192 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 8192 0x4A1714E: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+      n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 8192 0x4A18752: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 8192 0x49C6136: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 8192 0x49C6AFC: ERR_set_mark (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 8192 0x4973021: CONF_modules_load_file_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 8192 0x4A17F5F: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+             n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+              n1: 8192 0x4A189C5: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+               n1: 8192 0x4AEDFEC: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                n1: 8192 0x49EE197: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                 n1: 8192 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                  n1: 8192 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                   n1: 8192 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                    n0: 8192 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 3072 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=419083920
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=423323096
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56264
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=427561630
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=431800161
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=436041672
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56264
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=440281350
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55216
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=444519900
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=448758432
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=452999757
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56488
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=457238298
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=detailed
+n5: 600631 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n7: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n0: 19096 in 25 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+  n1: 8848 0x4A1B8E3: CRYPTO_THREAD_lock_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8848 in 18 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n3: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n1: 8208 0x4A0E322: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8208 in 3 places, all below massif's threshold (1.00%)
+  n0: 5688 in 6 places, all below massif's threshold (1.00%)
+ n0: 27005 in 38 places, all below massif's threshold (1.00%)
+ n2: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 8192 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n2: 8192 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 8192 0x4A1714E: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+      n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 8192 0x4A18752: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 8192 0x49C6136: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 8192 0x49C6AFC: ERR_set_mark (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 8192 0x4973021: CONF_modules_load_file_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 8192 0x4A17F5F: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+             n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+              n1: 8192 0x4A189C5: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+               n1: 8192 0x4AEDFEC: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                n1: 8192 0x49EE197: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                 n1: 8192 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                  n1: 8192 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                   n1: 8192 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                    n0: 8192 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 3072 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=78
+#-----------
+time=461476868
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=465715406
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=469953941
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=474192487
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=478435404
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55272
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=482678062
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56488
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=486916619
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=491155899
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=56488
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=495394441
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=499632972
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55288
+heap_tree=detailed
+n5: 600631 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n7: 459272 0x4A1064D: CRYPTO_zalloc (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n1: 294912 0x4A1B834: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 294912 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 294912 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 294912 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 294912 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 294912 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 294912 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 294912 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 294912 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 294912 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 294912 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 294912 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 294912 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 294912 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 65536 0x4A1B7C2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 65536 0x4A41CF5: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 65536 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 65536 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 65536 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 65536 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 65536 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 65536 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 65536 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 65536 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 65536 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 65536 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 65536 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 65536 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n1: 31744 0x49ED913: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31744 0x49EEC3D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 31744 0x49E58F9: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 31744 0x4A055E8: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 31744 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 31744 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 31744 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 31744 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 31744 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 31744 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 31744 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 31744 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 31744 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 31744 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+  n2: 22880 0x4A05C2C: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 21824 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 21824 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 21824 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 21824 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 21824 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 21824 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 21824 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 21824 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 21824 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 21824 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 21824 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 21824 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 21824 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 1056 in 7 places, all below massif's threshold (1.00%)
+  n0: 19096 in 25 places, all below massif's threshold (1.00%)
+  n2: 16256 0x4A05C46: OPENSSL_LH_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 15872 0x4A41CCF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 15872 0x49E5859: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 15872 0x4A0564B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+      n1: 15872 0x4A0550B: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 15872 0x4A24B2A: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 15872 0x4AEE227: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 15872 0x4AEE87D: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 15872 0x49E60F2: EVP_CIPHER_fetch (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 15872 0x49EE5FF: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 15872 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+             n1: 15872 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+              n1: 15872 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+               n0: 15872 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+   n0: 384 in 7 places, all below massif's threshold (1.00%)
+  n1: 8848 0x4A1B8E3: CRYPTO_THREAD_lock_new (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8848 in 18 places, all below massif's threshold (1.00%)
+ n0: 55330 0x109407: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+ n3: 47760 0x4A05F75: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 33864 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n1: 31896 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n0: 31896 in 33 places, all below massif's threshold (1.00%)
+   n0: 1968 in 2 places, all below massif's threshold (1.00%)
+  n1: 8208 0x4A0E322: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n0: 8208 in 3 places, all below massif's threshold (1.00%)
+  n0: 5688 in 6 places, all below massif's threshold (1.00%)
+ n0: 27005 in 38 places, all below massif's threshold (1.00%)
+ n2: 11264 0x4A05F23: OPENSSL_LH_insert (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+  n2: 8192 0x4AF73B2: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+   n2: 8192 0x49C469F: ERR_load_strings_const (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+    n1: 8192 0x4A1714E: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+     n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+      n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+       n1: 8192 0x4A18752: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+        n1: 8192 0x49C6136: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+         n1: 8192 0x49C6AFC: ERR_set_mark (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+          n1: 8192 0x4973021: CONF_modules_load_file_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+           n1: 8192 0x4A17F5F: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+            n1: 8192 0x4D36EE7: __pthread_once_slow (pthread_once.c:116)
+             n1: 8192 0x4A1BA5C: CRYPTO_THREAD_run_once (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+              n1: 8192 0x4A189C5: OPENSSL_init_crypto (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+               n1: 8192 0x4AEDFEC: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                n1: 8192 0x49EE197: ??? (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                 n1: 8192 0x49EEA6E: EVP_CipherInit_ex (in /usr/lib/x86_64-linux-gnu/libcrypto.so.3)
+                  n1: 8192 0x10A249: randombytes (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                   n1: 8192 0x10EBD3: pqcrystals_dilithium2_ref_keypair (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+                    n0: 8192 0x1093A9: main (in /home/alperen/seda/dilithium-crystals/dilithium2/Batch)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 3072 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=88
+#-----------
+time=503871512
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=508110041
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55224
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=512348573
+mem_heap_B=600631
+mem_heap_extra_B=58705
+mem_stacks_B=55304
+heap_tree=empty

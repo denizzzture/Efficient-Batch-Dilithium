@@ -24,848 +24,442 @@ void poly_sum(poly *result, poly *poly_array[], unsigned int n) {
     }
 }
 // 8*7*4
-int mult_p874(polyveck C[4], polyvecl mat[8], polyvecl s1hats[4]){
+int mult_p874(polyveck C[4], polyvecl mat[8], polyvecl s1hats[4], poly p[]){
 
 	poly addition, addition2, subtraction, subtraction2;
-	poly p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p53,p54,p55,p56,p57,p58,p59,p60,p61,p62,p63,p64,p65,p66,p67,p68,p69,p70,p71,p72,p73,p74,p75,p76,p77,p78,p79,p80,p81,p82,p83,p84,p85,p86,p87,p88,p89,p90,p91,p92,p93,p94,p95,p96,p97,p98,p99,p100,p101,p102,p103,p104,p105,p106,p107,p108,p109,p110,p111,p112,p113,p114,p115,p116,p117,p118,p119,p120,p121,p122,p123,p124,p125,p126,p127,p128,p129,p130,p131,p132,p133,p134,p135,p136,p137,p138,p139,p140,p141,p142,p143,p144,p145,p146,p147,p148,p149,p150,p151,p152,p153,p154;                             
-
+	
 	// Computation of p_i's
+	int index=0;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[0], &s1hats[0].vec[1]);
+		poly_add(&addition2, &mat[i].vec[1], &s1hats[1].vec[0]);
+		poly_pointwise_montgomery(&p[index],  &addition, &addition2);
+		index++;
+	}
 	
-	poly_add(&addition, &mat[0].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[0].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p1,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[1].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[1].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p2,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[2].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[2].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p3,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[3].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[3].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p4,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[4].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[4].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p5,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[5].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[5].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p6,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[6].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[6].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p7,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[7].vec[0], &s1hats[0].vec[1]);
-	poly_add(&addition2, &mat[7].vec[1], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p8,  &addition, &addition2);
+
+
+
+	index=8;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[0], &s1hats[0].vec[2]);
+		poly_add(&addition2, &mat[i].vec[2], &s1hats[2].vec[0]);
+		poly_pointwise_montgomery(&p[index],  &addition, &addition2);
+		index++;
+	}
 
 	
-	poly_add(&addition, &mat[0].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[0].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p9,  &addition, &addition2);
+
+	index=16;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[1], &s1hats[1].vec[2]);
+		poly_add(&addition2, &mat[i].vec[2], &s1hats[2].vec[1]);
+		poly_pointwise_montgomery(&p[index],  &addition, &addition2);
+		index++;
+	}
+
+
+
 	
-	poly_add(&addition, &mat[1].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[1].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p10,  &addition, &addition2);
+
 	
-	poly_add(&addition, &mat[2].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[2].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p11,  &addition, &addition2);
+	poly_pointwise_montgomery(&p[24],  &s1hats[1].vec[0], &s1hats[0].vec[1]);
 	
-	poly_add(&addition, &mat[3].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[3].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p12,  &addition, &addition2);
+	poly_pointwise_montgomery(&p[25],  &s1hats[2].vec[0], &s1hats[0].vec[2]);
 	
-	poly_add(&addition, &mat[4].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[4].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p13,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[5].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[5].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p14,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[6].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[6].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p15,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[7].vec[0], &s1hats[0].vec[2]);
-	poly_add(&addition2, &mat[7].vec[2], &s1hats[2].vec[0]);
-	poly_pointwise_montgomery(&p16,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[0].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[0].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p17,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[1].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[1].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p18,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[2].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[2].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p19,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[3].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[3].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p20,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[4].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[4].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p21,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[5].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[5].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p22,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[6].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[6].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p23,  &addition, &addition2);
-	
-	poly_add(&addition, &mat[7].vec[1], &s1hats[1].vec[2]);
-	poly_add(&addition2, &mat[7].vec[2], &s1hats[2].vec[1]);
-	poly_pointwise_montgomery(&p24,  &addition, &addition2);
-	
-	
-	poly_pointwise_montgomery(&p25,  &s1hats[1].vec[0], &s1hats[0].vec[1]);
-	
-	poly_pointwise_montgomery(&p26,  &s1hats[2].vec[0], &s1hats[0].vec[2]);
-	
-	poly_pointwise_montgomery(&p27,  &s1hats[2].vec[1], &s1hats[1].vec[2]);
+	poly_pointwise_montgomery(&p[26],  &s1hats[2].vec[1], &s1hats[1].vec[2]);
 	
 	poly_sub(&subtraction,   &s1hats[0].vec[1], &s1hats[3].vec[1]);
 	poly_sub(&subtraction2,  &s1hats[3].vec[0], &s1hats[1].vec[0]);
-	poly_pointwise_montgomery(&p28,  &subtraction, &subtraction2);
+	poly_pointwise_montgomery(&p[27],  &subtraction, &subtraction2);
+
+
+	index=28;
+
+	for(int i=0; i<8; i++){
+		poly *poly_array1[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[i].vec[1], &mat[i].vec[2]};
+		poly_sum(&addition, poly_array1, 4);
+		poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
+		poly_pointwise_montgomery(&p[index], &mat[i].vec[0], &subtraction);
+		index++;
+	}
 	
 	
-	poly *poly_array1[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[0].vec[1], &mat[0].vec[2]};
-	poly_sum(&addition, poly_array1, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p29, &mat[0].vec[0], &subtraction);
-	
-	poly *poly_array2[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[1].vec[1], &mat[1].vec[2]};
-	poly_sum(&addition, poly_array2, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p30, &mat[1].vec[0], &subtraction);
-	
-	poly *poly_array3[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[2].vec[1], &mat[2].vec[2]};
-	poly_sum(&addition, poly_array3, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p31, &mat[2].vec[0], &subtraction);
-	
-	poly *poly_array4[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[3].vec[1], &mat[3].vec[2]};
-	poly_sum(&addition, poly_array4, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p32, &mat[3].vec[0], &subtraction);
-	
-	poly *poly_array5[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[4].vec[1], &mat[4].vec[2]};
-	poly_sum(&addition, poly_array5, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p33, &mat[4].vec[0], &subtraction);
-	
-	poly *poly_array6[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[5].vec[1], &mat[5].vec[2]};
-	poly_sum(&addition, poly_array6, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p34, &mat[5].vec[0], &subtraction);
-	
-	poly *poly_array7[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[6].vec[1], &mat[6].vec[2]};
-	poly_sum(&addition, poly_array7, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p35, &mat[6].vec[0], &subtraction);
-	
-	poly *poly_array8[] = {&s1hats[1].vec[0], &s1hats[2].vec[0], &mat[7].vec[1], &mat[7].vec[2]};
-	poly_sum(&addition, poly_array8, 4);
-	poly_sub(&subtraction,  &s1hats[0].vec[0], &addition);
-	poly_pointwise_montgomery(&p36, &mat[7].vec[0], &subtraction);
+
+
+	index=36;
+
+	for(int i=0; i<8; i++){
+		poly *poly_array9[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[i].vec[0], &mat[i].vec[2]};
+		poly_sum(&addition, poly_array9, 4);
+		poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
+		poly_pointwise_montgomery(&p[index], &mat[i].vec[1], &subtraction);
+		index++;
+	}
 	
 	
-	poly *poly_array9[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[0].vec[0], &mat[0].vec[2]};
-	poly_sum(&addition, poly_array9, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p37, &mat[0].vec[1], &subtraction);
 	
-	poly *poly_array10[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[1].vec[0], &mat[1].vec[2]};
-	poly_sum(&addition, poly_array10, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p38, &mat[1].vec[1], &subtraction);
-	
-	poly *poly_array11[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[2].vec[0], &mat[2].vec[2]};
-	poly_sum(&addition, poly_array11, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p39, &mat[2].vec[1], &subtraction);
-	
-	poly *poly_array12[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[3].vec[0], &mat[3].vec[2]};
-	poly_sum(&addition, poly_array12, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p40, &mat[3].vec[1], &subtraction);
-	
-	poly *poly_array13[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[4].vec[0], &mat[4].vec[2]};
-	poly_sum(&addition, poly_array13, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p41, &mat[4].vec[1], &subtraction);
-	
-	poly *poly_array14[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[5].vec[0], &mat[5].vec[2]};
-	poly_sum(&addition, poly_array14, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p42, &mat[5].vec[1], &subtraction);
-	
-	poly *poly_array15[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[6].vec[0], &mat[6].vec[2]};
-	poly_sum(&addition, poly_array15, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p43, &mat[6].vec[1], &subtraction);
-	
-	poly *poly_array16[] = {&s1hats[0].vec[1], &s1hats[2].vec[1], &mat[7].vec[0], &mat[7].vec[2]};
-	poly_sum(&addition, poly_array16, 4);
-	poly_sub(&subtraction,  &s1hats[1].vec[1], &addition);
-	poly_pointwise_montgomery(&p44, &mat[7].vec[1], &subtraction);
+
+	index=44;
+
+	for(int i=0; i<8; i++){
+		poly *poly_array17[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[i].vec[0], &mat[i].vec[1]};
+		poly_sum(&addition, poly_array17, 4);
+		poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
+		poly_pointwise_montgomery(&p[index], &mat[i].vec[2], &subtraction);
+		index++;
+	}
 		
-	poly *poly_array17[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[0].vec[0], &mat[0].vec[1]};
-	poly_sum(&addition, poly_array17, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p45, &mat[0].vec[2], &subtraction);
 	
-	poly *poly_array18[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[1].vec[0], &mat[1].vec[1]};
-	poly_sum(&addition, poly_array18, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p46, &mat[1].vec[2], &subtraction);
+
+
+	index=52;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[0], &s1hats[0].vec[1]);
+		poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
+		poly_add(&addition2, &mat[i].vec[1], &s1hats[1].vec[0]);
+		poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
+		poly_pointwise_montgomery(&p[index],  &subtraction, &subtraction2);
+		index++;
+	}
 	
-	poly *poly_array19[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[2].vec[0], &mat[2].vec[1]};
-	poly_sum(&addition, poly_array19, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p47, &mat[2].vec[2], &subtraction);
 	
-	poly *poly_array20[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[3].vec[0], &mat[3].vec[1]};
-	poly_sum(&addition, poly_array20, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p48, &mat[3].vec[2], &subtraction);
+
+	index=60;
+
+	for(int i=0; i<8; i++){
+		poly_pointwise_montgomery(&p[index],  &mat[i].vec[2], &s1hats[3].vec[2]);
+		index++;
+	}
 	
-	poly *poly_array21[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[4].vec[0], &mat[4].vec[1]};
-	poly_sum(&addition, poly_array21, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p49, &mat[4].vec[2], &subtraction);
-	
-	poly *poly_array22[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[5].vec[0], &mat[5].vec[1]};
-	poly_sum(&addition, poly_array22, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p50, &mat[5].vec[2], &subtraction);
-	
-	poly *poly_array23[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[6].vec[0], &mat[6].vec[1]};
-	poly_sum(&addition, poly_array23, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p51, &mat[6].vec[2], &subtraction);
-	
-	poly *poly_array24[] = {&s1hats[0].vec[2], &s1hats[1].vec[2], &mat[7].vec[0], &mat[7].vec[1]};
-	poly_sum(&addition, poly_array24, 4);
-	poly_sub(&subtraction,  &s1hats[2].vec[2], &addition);
-	poly_pointwise_montgomery(&p52, &mat[7].vec[2], &subtraction);
-	
-	poly_add(&addition, &mat[0].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[0].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p53,  &subtraction, &subtraction2);
-	
-	poly_add(&addition, &mat[1].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[1].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p54,  &subtraction, &subtraction2);
-	
-	poly_add(&addition, &mat[2].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[2].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p55,  &subtraction, &subtraction2);
-	
-	poly_add(&addition, &mat[3].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[3].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p56,  &subtraction, &subtraction2);
-	
-	poly_add(&addition, &mat[4].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[4].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p57,  &subtraction, &subtraction2);
-	
-	poly_add(&addition, &mat[5].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[5].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p58,  &subtraction, &subtraction2);
-	
-	poly_add(&addition, &mat[6].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[6].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p59,  &subtraction, &subtraction2);
-	
-	poly_add(&addition, &mat[7].vec[0], &s1hats[0].vec[1]);
-	poly_sub(&subtraction,  &addition, &s1hats[3].vec[1]);
-	poly_add(&addition2, &mat[7].vec[1], &s1hats[1].vec[0]);
-	poly_sub(&subtraction2,  &s1hats[3].vec[0], &addition2);
-	poly_pointwise_montgomery(&p60,  &subtraction, &subtraction2);
-	
-	poly_pointwise_montgomery(&p61,  &mat[0].vec[2], &s1hats[3].vec[2]);
-	poly_pointwise_montgomery(&p62,  &mat[1].vec[2], &s1hats[3].vec[2]);
-	poly_pointwise_montgomery(&p63,  &mat[2].vec[2], &s1hats[3].vec[2]);
-	poly_pointwise_montgomery(&p64,  &mat[3].vec[2], &s1hats[3].vec[2]);
-	poly_pointwise_montgomery(&p65,  &mat[4].vec[2], &s1hats[3].vec[2]);
-	poly_pointwise_montgomery(&p66,  &mat[5].vec[2], &s1hats[3].vec[2]);
-	poly_pointwise_montgomery(&p67,  &mat[6].vec[2], &s1hats[3].vec[2]);
-	poly_pointwise_montgomery(&p68,  &mat[7].vec[2], &s1hats[3].vec[2]);
+
+
+	index=68;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &s1hats[0].vec[3], &mat[i].vec[4]);
+		poly_pointwise_montgomery(&p[index],  &mat[i].vec[3] , &addition);
+		index++;
+	}
 		
-	poly_add(&addition, &s1hats[0].vec[3], &mat[0].vec[4]);
-	poly_pointwise_montgomery(&p69,  &mat[0].vec[3] , &addition);
+
+
+
+	index=76;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &s1hats[0].vec[5], &mat[i].vec[6]);
+		poly_pointwise_montgomery(&p[index],  &mat[i].vec[5] , &addition);
+		index++;
+	}	  
 	
-	poly_add(&addition, &s1hats[0].vec[3], &mat[1].vec[4]);
-	poly_pointwise_montgomery(&p70,  &mat[1].vec[3] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &mat[2].vec[4]);
-	poly_pointwise_montgomery(&p71,  &mat[2].vec[3] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &mat[3].vec[4]);
-	poly_pointwise_montgomery(&p72,  &mat[3].vec[3] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &mat[4].vec[4]);
-	poly_pointwise_montgomery(&p73,  &mat[4].vec[3] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &mat[5].vec[4]);
-	poly_pointwise_montgomery(&p74,  &mat[5].vec[3] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &mat[6].vec[4]);
-	poly_pointwise_montgomery(&p75,  &mat[6].vec[3] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &mat[7].vec[4]);
-	poly_pointwise_montgomery(&p76,  &mat[7].vec[3] , &addition);
-			  
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[0].vec[6]);
-	poly_pointwise_montgomery(&p77,  &mat[0].vec[5] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[1].vec[6]);
-	poly_pointwise_montgomery(&p78,  &mat[1].vec[5] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[2].vec[6]);
-	poly_pointwise_montgomery(&p79,  &mat[2].vec[5] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[3].vec[6]);
-	poly_pointwise_montgomery(&p80,  &mat[3].vec[5] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[4].vec[6]);
-	poly_pointwise_montgomery(&p81,  &mat[4].vec[5] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[5].vec[6]);
-	poly_pointwise_montgomery(&p82,  &mat[5].vec[5] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[6].vec[6]);
-	poly_pointwise_montgomery(&p83,  &mat[6].vec[5] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &mat[7].vec[6]);
-	poly_pointwise_montgomery(&p84,  &mat[7].vec[5] , &addition);
+
+
+	index=84;
+
+	for(int i=1; i<4; i++){
+		poly_add(&addition, &s1hats[0].vec[3], &s1hats[i].vec[3]);
+		poly_pointwise_montgomery(&p[index],  &s1hats[i].vec[4] , &addition);
+		index++;
+		poly_add(&addition, &s1hats[0].vec[5], &s1hats[i].vec[5]);
+		poly_pointwise_montgomery(&p[index],  &s1hats[i].vec[6] , &addition);
+		index++;
+	}
+
+
 		
-	poly_add(&addition, &s1hats[0].vec[3], &s1hats[1].vec[3]);
-	poly_pointwise_montgomery(&p85,  &s1hats[1].vec[4] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &s1hats[1].vec[5]);
-	poly_pointwise_montgomery(&p86,  &s1hats[1].vec[6] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &s1hats[2].vec[3]);
-	poly_pointwise_montgomery(&p87,  &s1hats[2].vec[4] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &s1hats[2].vec[5]);
-	poly_pointwise_montgomery(&p88,  &s1hats[2].vec[6] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[3], &s1hats[3].vec[3]);
-	poly_pointwise_montgomery(&p89,  &s1hats[3].vec[4] , &addition);
-	
-	poly_add(&addition, &s1hats[0].vec[5], &s1hats[3].vec[5]);
-	poly_pointwise_montgomery(&p90,  &s1hats[3].vec[6] , &addition);
+
+
+
+	index=90;
+
+	for(int i=0; i<8; i++){
+		poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[i].vec[3]);
+		poly_pointwise_montgomery(&p[index],  &mat[i].vec[4] , &subtraction);
+		index++;
+	}
 						
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[0].vec[3]);
-	poly_pointwise_montgomery(&p91,  &mat[0].vec[4] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[1].vec[3]);
-	poly_pointwise_montgomery(&p92,  &mat[1].vec[4] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[2].vec[3]);
-	poly_pointwise_montgomery(&p93,  &mat[2].vec[4] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[3].vec[3]);
-	poly_pointwise_montgomery(&p94,  &mat[3].vec[4] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[4].vec[3]);
-	poly_pointwise_montgomery(&p95,  &mat[4].vec[4] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[5].vec[3]);
-	poly_pointwise_montgomery(&p96,  &mat[5].vec[4] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[6].vec[3]);
-	poly_pointwise_montgomery(&p97,  &mat[6].vec[4] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[4], &mat[7].vec[3]);
-	poly_pointwise_montgomery(&p98,  &mat[7].vec[4] , &subtraction);
+
+	index=98;
+
+	for(int i=0; i<8; i++){
+		poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[i].vec[5]);
+		poly_pointwise_montgomery(&p[index],  &mat[i].vec[6] , &subtraction);
+		index++;
+	}
 	
 	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[0].vec[5]);
-	poly_pointwise_montgomery(&p99,  &mat[0].vec[6] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[1].vec[5]);
-	poly_pointwise_montgomery(&p100,  &mat[1].vec[6] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[2].vec[5]);
-	poly_pointwise_montgomery(&p101,  &mat[2].vec[6] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[3].vec[5]);
-	poly_pointwise_montgomery(&p102,  &mat[3].vec[6] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[4].vec[5]);
-	poly_pointwise_montgomery(&p103,  &mat[4].vec[6] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[5].vec[5]);
-	poly_pointwise_montgomery(&p104,  &mat[5].vec[6] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[6].vec[5]);
-	poly_pointwise_montgomery(&p105,  &mat[6].vec[6] , &subtraction);
-	
-	poly_sub(&subtraction,  &s1hats[0].vec[6], &mat[7].vec[5]);
-	poly_pointwise_montgomery(&p106,  &mat[7].vec[6] , &subtraction);
+
+
+	index=106;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[3], &s1hats[1].vec[4]);
+		poly *poly_array25[] = {&mat[i].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
+		poly_sum(&addition2, poly_array25, 3);
+		poly_pointwise_montgomery(&p[index],  &addition , &addition2);
+		index++;
+	}
 			   
 	
-	poly_add(&addition, &mat[0].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array25[] = {&mat[0].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array25, 3);
-	poly_pointwise_montgomery(&p107,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[1].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array26[] = {&mat[1].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array26, 3);
-	poly_pointwise_montgomery(&p108,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[2].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array27[] = {&mat[2].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array27, 3);
-	poly_pointwise_montgomery(&p109,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[3].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array28[] = {&mat[3].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array28, 3);
-	poly_pointwise_montgomery(&p110,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[4].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array29[] = {&mat[4].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array29, 3);
-	poly_pointwise_montgomery(&p111,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[5].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array30[] = {&mat[5].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array30, 3);
-	poly_pointwise_montgomery(&p112,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[6].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array31[] = {&mat[6].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array31, 3);
-	poly_pointwise_montgomery(&p113,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[7].vec[3], &s1hats[1].vec[4]);
-	poly *poly_array32[] = {&mat[7].vec[4], &s1hats[0].vec[3], &s1hats[1].vec[3]};
-	poly_sum(&addition2, poly_array32, 3);
-	poly_pointwise_montgomery(&p114,  &addition , &addition2);
+
+
+
+	index=114;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[5], &s1hats[1].vec[6]);
+		poly *poly_array33[] = {&mat[i].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
+		poly_sum(&addition2, poly_array33, 3);
+		poly_pointwise_montgomery(&p[index],  &addition , &addition2);
+		index++;
+	}
 	
 	
-	poly_add(&addition, &mat[0].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array33[] = {&mat[0].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array33, 3);
-	poly_pointwise_montgomery(&p115,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[1].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array34[] = {&mat[1].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array34, 3);
-	poly_pointwise_montgomery(&p116,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[2].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array35[] = {&mat[2].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array35, 3);
-	poly_pointwise_montgomery(&p117,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[3].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array36[] = {&mat[3].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array36, 3);
-	poly_pointwise_montgomery(&p118,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[4].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array37[] = {&mat[4].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array37, 3);
-	poly_pointwise_montgomery(&p119,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[5].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array38[] = {&mat[5].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array38, 3);
-	poly_pointwise_montgomery(&p120,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[6].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array39[] = {&mat[6].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array39, 3);
-	poly_pointwise_montgomery(&p121,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[7].vec[5], &s1hats[1].vec[6]);
-	poly *poly_array40[] = {&mat[7].vec[6], &s1hats[0].vec[5], &s1hats[1].vec[5]};
-	poly_sum(&addition2, poly_array40, 3);
-	poly_pointwise_montgomery(&p122,  &addition , &addition2);
+
+
+	index=122;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[3], &s1hats[2].vec[4]);
+		poly *poly_array41[] = {&mat[i].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
+		poly_sum(&addition2, poly_array41, 3);
+		poly_pointwise_montgomery(&p[index],  &addition , &addition2);
+		index++;
+	}
+
 				
 	
-	poly_add(&addition, &mat[0].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array41[] = {&mat[0].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array41, 3);
-	poly_pointwise_montgomery(&p123,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[1].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array42[] = {&mat[1].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array42, 3);
-	poly_pointwise_montgomery(&p124,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[2].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array43[] = {&mat[2].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array43, 3);
-	poly_pointwise_montgomery(&p125,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[3].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array44[] = {&mat[3].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array44, 3);
-	poly_pointwise_montgomery(&p126,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[4].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array45[] = {&mat[4].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array45, 3);
-	poly_pointwise_montgomery(&p127,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[5].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array46[] = {&mat[5].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array46, 3);
-	poly_pointwise_montgomery(&p128,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[6].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array47[] = {&mat[6].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array47, 3);
-	poly_pointwise_montgomery(&p129,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[7].vec[3], &s1hats[2].vec[4]);
-	poly *poly_array48[] = {&mat[7].vec[4], &s1hats[0].vec[3], &s1hats[2].vec[3]};
-	poly_sum(&addition2, poly_array48, 3);
-	poly_pointwise_montgomery(&p130,  &addition , &addition2);
+
+
+	index=130;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[5], &s1hats[2].vec[6]);
+		poly *poly_array49[] = {&mat[i].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
+		poly_sum(&addition2, poly_array49, 3);
+		poly_pointwise_montgomery(&p[index],  &addition , &addition2);
+		index++;
+	}
 				
 	
-	poly_add(&addition, &mat[0].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array49[] = {&mat[0].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array49, 3);
-	poly_pointwise_montgomery(&p131,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[1].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array50[] = {&mat[1].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array50, 3);
-	poly_pointwise_montgomery(&p132,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[2].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array51[] = {&mat[2].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array51, 3);
-	poly_pointwise_montgomery(&p133,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[3].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array52[] = {&mat[3].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array52, 3);
-	poly_pointwise_montgomery(&p134,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[4].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array53[] = {&mat[4].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array53, 3);
-	poly_pointwise_montgomery(&p135,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[5].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array54[] = {&mat[5].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array54, 3);
-	poly_pointwise_montgomery(&p136,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[6].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array55[] = {&mat[6].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array55, 3);
-	poly_pointwise_montgomery(&p137,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[7].vec[5], &s1hats[2].vec[6]);
-	poly *poly_array56[] = {&mat[7].vec[6], &s1hats[0].vec[5], &s1hats[2].vec[5]};
-	poly_sum(&addition2, poly_array56, 3);
-	poly_pointwise_montgomery(&p138,  &addition , &addition2);
+
+
+	index=138;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[3], &s1hats[3].vec[4]);
+		poly *poly_array57[] = {&mat[i].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
+		poly_sum(&addition2, poly_array57, 3);
+		poly_pointwise_montgomery(&p[index],  &addition , &addition2);
+		index++;
+	}
 				
 	
-	poly_add(&addition, &mat[0].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array57[] = {&mat[0].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array57, 3);
-	poly_pointwise_montgomery(&p139,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[1].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array58[] = {&mat[1].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array58, 3);
-	poly_pointwise_montgomery(&p140,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[2].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array59[] = {&mat[2].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array59, 3);
-	poly_pointwise_montgomery(&p141,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[3].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array60[] = {&mat[3].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array60, 3);
-	poly_pointwise_montgomery(&p142,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[4].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array61[] = {&mat[4].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array61, 3);
-	poly_pointwise_montgomery(&p143,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[5].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array62[] = {&mat[5].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array62, 3);
-	poly_pointwise_montgomery(&p144,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[6].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array63[] = {&mat[6].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array63, 3);
-	poly_pointwise_montgomery(&p145,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[7].vec[3], &s1hats[3].vec[4]);
-	poly *poly_array64[] = {&mat[7].vec[4], &s1hats[0].vec[3], &s1hats[3].vec[3]};
-	poly_sum(&addition2, poly_array64, 3);
-	poly_pointwise_montgomery(&p146,  &addition , &addition2);
+
+
+	index=146;
+
+	for(int i=0; i<8; i++){
+		poly_add(&addition, &mat[i].vec[5], &s1hats[3].vec[6]);
+		poly *poly_array65[] = {&mat[i].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
+		poly_sum(&addition2, poly_array65, 3);
+		poly_pointwise_montgomery(&p[index],  &addition , &addition2);
+		index++;
+	}
 		
 	
-	poly_add(&addition, &mat[0].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array65[] = {&mat[0].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array65, 3);
-	poly_pointwise_montgomery(&p147,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[1].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array66[] = {&mat[1].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array66, 3);
-	poly_pointwise_montgomery(&p148,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[2].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array67[] = {&mat[2].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array67, 3);
-	poly_pointwise_montgomery(&p149,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[3].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array68[] = {&mat[3].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array68, 3);
-	poly_pointwise_montgomery(&p150,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[4].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array69[] = {&mat[4].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array69, 3);
-	poly_pointwise_montgomery(&p151,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[5].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array70[] = {&mat[5].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array70, 3);
-	poly_pointwise_montgomery(&p152,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[6].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array71[] = {&mat[6].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array71, 3);
-	poly_pointwise_montgomery(&p153,  &addition , &addition2);
-	
-	poly_add(&addition, &mat[7].vec[5], &s1hats[3].vec[6]);
-	poly *poly_array72[] = {&mat[7].vec[6], &s1hats[0].vec[5], &s1hats[3].vec[5]};
-	poly_sum(&addition2, poly_array72, 3);
-	poly_pointwise_montgomery(&p154,  &addition , &addition2);
+
 				
 	
-	poly *poly_array73[] = {&p1, &p9 , &p29, &p69, &p77, &p91, &p99 };
+	poly *poly_array73[] = {&p[0], &p[8] , &p[28], &p[68], &p[76], &p[90], &p[98] };
 	poly_sum(&addition, poly_array73, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[0],  &addition, &addition2);
 	
-	poly *poly_array74[] = {&p2, &p10, &p30, &p70, &p78, &p92, &p100};
+	poly *poly_array74[] = {&p[1], &p[9], &p[29], &p[69], &p[77], &p[91], &p[99]};
 	poly_sum(&addition, poly_array74, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[1],  &addition, &addition2);
 	
-	poly *poly_array75[] = {&p3, &p11, &p31, &p71, &p79, &p93, &p101};
+	poly *poly_array75[] = {&p[2], &p[10], &p[30], &p[70], &p[78], &p[92], &p[100]};
 	poly_sum(&addition, poly_array75, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[2],  &addition, &addition2);
 	
-	poly *poly_array76[] = {&p4, &p12, &p32, &p72, &p80, &p94, &p102};
+	poly *poly_array76[] = {&p[3], &p[11], &p[31], &p[71], &p[79], &p[93], &p[101]};
 	poly_sum(&addition, poly_array76, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[3],  &addition, &addition2);
 	
-	poly *poly_array77[] = {&p5, &p13, &p33, &p73, &p81, &p95, &p103};
+	poly *poly_array77[] = {&p[4], &p[12], &p[32], &p[72], &p[80], &p[94], &p[102]};
 	poly_sum(&addition, poly_array77, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[4],  &addition, &addition2);
 	
-	poly *poly_array78[] = {&p6, &p14, &p34, &p74, &p82, &p96, &p104};
+	poly *poly_array78[] = {&p[5], &p[13], &p[33], &p[73], &p[81], &p[95], &p[103]};
 	poly_sum(&addition, poly_array78, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[5],  &addition, &addition2);
 	
-	poly *poly_array79[] = {&p7, &p15, &p35, &p75, &p83, &p97, &p105};
+	poly *poly_array79[] = {&p[6], &p[14], &p[34], &p[74], &p[82], &p[96], &p[104]};
 	poly_sum(&addition, poly_array79, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[6],  &addition, &addition2);
 	
-	poly *poly_array80[] = {&p8, &p16, &p36, &p76, &p84, &p98, &p106};
+	poly *poly_array80[] = {&p[7], &p[15], &p[35], &p[75], &p[83], &p[97], &p[105]};
 	poly_sum(&addition, poly_array80, 7);
-	poly_add(&addition2, &p25, &p26);
+	poly_add(&addition2, &p[24], &p[25]);
 	poly_sub(&C[0].vec[7],  &addition, &addition2);
 	
 	
-	poly *poly_array81[] = {&p1, &p17, &p37, &p107, &p115};
+	poly *poly_array81[] = {&p[0], &p[16], &p[36], &p[106], &p[114]};
 	poly_sum(&addition, poly_array81, 5);
-	poly *poly_array89[] = {&p25, &p27, &p69, &p77, &p85, &p86};
+	poly *poly_array89[] = {&p[24], &p[26], &p[68], &p[76], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array89, 6);
 	poly_sub(&C[1].vec[0],  &addition, &addition2);
 	
-	poly *poly_array82[] = {&p2, &p18, &p38, &p108, &p116};
+	poly *poly_array82[] = {&p[1], &p[17], &p[37], &p[107], &p[115]};
 	poly_sum(&addition, poly_array82, 5);
-	poly *poly_array90[] = {&p25, &p27, &p70, &p78, &p85, &p86};
+	poly *poly_array90[] = {&p[24], &p[26], &p[69], &p[77], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array90, 6);
 	poly_sub(&C[1].vec[1],  &addition, &addition2);
 	
-	poly *poly_array83[] = {&p3, &p19, &p39, &p109, &p117};
+	poly *poly_array83[] = {&p[2], &p[18], &p[38], &p[108], &p[116]};
 	poly_sum(&addition, poly_array83, 5);
-	poly *poly_array91[] = {&p25, &p27, &p71, &p79, &p85, &p86};
+	poly *poly_array91[] = {&p[24], &p[26], &p[70], &p[78], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array91, 6);
 	poly_sub(&C[1].vec[2],  &addition, &addition2);
 	
-	poly *poly_array84[] = {&p4, &p20, &p40, &p110, &p118};
+	poly *poly_array84[] = {&p[3], &p[19], &p[39], &p[109], &p[117]};
 	poly_sum(&addition, poly_array84, 5);
-	poly *poly_array92[] = {&p25, &p27, &p72, &p80, &p85, &p86};
+	poly *poly_array92[] = {&p[24], &p[26], &p[71], &p[79], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array92, 6);
 	poly_sub(&C[1].vec[3],  &addition, &addition2);
 	
-	poly *poly_array85[] = {&p5, &p21, &p41, &p111, &p119};
+	poly *poly_array85[] = {&p[4], &p[20], &p[40], &p[110], &p[118]};
 	poly_sum(&addition, poly_array85, 5);
-	poly *poly_array93[] = {&p25, &p27, &p73, &p81, &p85, &p86};
+	poly *poly_array93[] = {&p[24], &p[26], &p[72], &p[80], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array93, 6);
 	poly_sub(&C[1].vec[4],  &addition, &addition2);
 	
-	poly *poly_array86[] = {&p6, &p22, &p42, &p112, &p120};
+	poly *poly_array86[] = {&p[5], &p[21], &p[41], &p[111], &p[119]};
 	poly_sum(&addition, poly_array86, 5);
-	poly *poly_array94[] = {&p25, &p27, &p74, &p82, &p85, &p86};
+	poly *poly_array94[] = {&p[24], &p[26], &p[73], &p[81], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array94, 6);
 	poly_sub(&C[1].vec[5],  &addition, &addition2);
 	
-	poly *poly_array87[] = {&p7, &p23, &p43, &p113, &p121};
+	poly *poly_array87[] = {&p[6], &p[22], &p[42], &p[112], &p[120]};
 	poly_sum(&addition, poly_array87, 5);
-	poly *poly_array95[] = {&p25, &p27, &p75, &p83, &p85, &p86};
+	poly *poly_array95[] = {&p[24], &p[26], &p[74], &p[82], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array95, 6);
 	poly_sub(&C[1].vec[6],  &addition, &addition2);
 	
-	poly *poly_array88[] = {&p8, &p24, &p44, &p114, &p122};
+	poly *poly_array88[] = {&p[7], &p[23], &p[43], &p[113], &p[121]};
 	poly_sum(&addition, poly_array88, 5);
-	poly *poly_array96[] = {&p25, &p27, &p76, &p84, &p85, &p86};
+	poly *poly_array96[] = {&p[24], &p[26], &p[75], &p[83], &p[84], &p[85]};
 	poly_sum(&addition2, poly_array96, 6);
 	poly_sub(&C[1].vec[7],  &addition, &addition2);
 	
 	
-	poly *poly_array97[]  = {&p9 , &p17, &p45, &p123, &p131};
+	poly *poly_array97[]  = {&p[8], &p[16], &p[44], &p[122], &p[130]};
 	poly_sum(&addition, poly_array97,  5);
-	poly *poly_array105[] = {&p26, &p27, &p69, &p77, &p87, &p88};
+	poly *poly_array105[] = {&p[25], &p[26], &p[68], &p[76], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array105, 6);
 	poly_sub(&C[2].vec[0],  &addition, &addition2);
 	
-	poly *poly_array98[]  = {&p10, &p18, &p46, &p124, &p132};
+	poly *poly_array98[]  = {&p[9], &p[17], &p[45], &p[123], &p[131]};
 	poly_sum(&addition, poly_array98,  5);
-	poly *poly_array106[] = {&p26, &p27, &p70, &p78, &p87, &p88};
+	poly *poly_array106[] = {&p[25], &p[26], &p[69], &p[77], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array106, 6);
 	poly_sub(&C[2].vec[1],  &addition, &addition2);
 	
-	poly *poly_array99[]  = {&p11, &p19, &p47, &p125, &p133};
+	poly *poly_array99[]  = {&p[10], &p[18], &p[46], &p[124], &p[132]};
 	poly_sum(&addition, poly_array99,  5);
-	poly *poly_array107[] = {&p26, &p27, &p71, &p79, &p87, &p88};
+	poly *poly_array107[] = {&p[25], &p[26], &p[70], &p[78], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array107, 6);
 	poly_sub(&C[2].vec[2],  &addition, &addition2);
 	
-	poly *poly_array100[] = {&p12, &p20, &p48, &p126, &p134};
+	poly *poly_array100[] = {&p[11], &p[19], &p[47], &p[125], &p[133]};
 	poly_sum(&addition, poly_array100, 5);
-	poly *poly_array108[] = {&p26, &p27, &p72, &p80, &p87, &p88};
+	poly *poly_array108[] = {&p[25], &p[26], &p[71], &p[79], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array108, 6);
 	poly_sub(&C[2].vec[3],  &addition, &addition2);
 	
-	poly *poly_array101[] = {&p13, &p21, &p49, &p127, &p135};
+	poly *poly_array101[] = {&p[12], &p[20], &p[48], &p[126], &p[134]};
 	poly_sum(&addition, poly_array101, 5);
-	poly *poly_array109[] = {&p26, &p27, &p73, &p81, &p87, &p88};
+	poly *poly_array109[] = {&p[25], &p[26], &p[72], &p[80], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array109, 6);
 	poly_sub(&C[2].vec[4],  &addition, &addition2);
 	
-	poly *poly_array102[] = {&p14, &p22, &p50, &p128, &p136};
+	poly *poly_array102[] = {&p[13], &p[21], &p[49], &p[127], &p[135]};
 	poly_sum(&addition, poly_array102, 5);
-	poly *poly_array110[] = {&p26, &p27, &p74, &p82, &p87, &p88};
+	poly *poly_array110[] = {&p[25], &p[26], &p[73], &p[81], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array110, 6);
 	poly_sub(&C[2].vec[5],  &addition, &addition2);
 	
-	poly *poly_array103[] = {&p15, &p23, &p51, &p129, &p137};
+	poly *poly_array103[] = {&p[14], &p[22], &p[50], &p[128], &p[136]};
 	poly_sum(&addition, poly_array103, 5);
-	poly *poly_array111[] = {&p26, &p27, &p75, &p83, &p87, &p88};
+	poly *poly_array111[] = {&p[25], &p[26], &p[74], &p[82], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array111, 6);
 	poly_sub(&C[2].vec[6],  &addition, &addition2);
 	
-	poly *poly_array104[] = {&p16, &p24, &p52, &p130, &p138};
+	poly *poly_array104[] = {&p[15], &p[23], &p[51], &p[129], &p[137]};
 	poly_sum(&addition, poly_array104, 5);
-	poly *poly_array112[] = {&p26, &p27, &p76, &p84, &p87, &p88};
+	poly *poly_array112[] = {&p[25], &p[26], &p[75], &p[83], &p[86], &p[87]};
 	poly_sum(&addition2, poly_array112, 6);
 	poly_sub(&C[2].vec[7],  &addition, &addition2);
 
 	
-	poly *poly_array113[] = {&p1, &p53, &p61, &p139, &p147};
+	poly *poly_array113[] = {&p[0], &p[52], &p[60], &p[138], &p[146]};
 	poly_sum(&addition, poly_array113, 5);
-	poly *poly_array121[] = {&p25, &p28, &p69, &p77, &p89, &p90};
+	poly *poly_array121[] = {&p[24], &p[27], &p[68], &p[76], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array121, 6);
 	poly_sub(&C[3].vec[0],  &addition, &addition2);
 	
-	poly *poly_array114[] = {&p2, &p54, &p62, &p140, &p148};
+	poly *poly_array114[] = {&p[1], &p[53], &p[61], &p[139], &p[147]};
 	poly_sum(&addition, poly_array114, 5);
-	poly *poly_array122[] = {&p25, &p28, &p70, &p78, &p89, &p90};
+	poly *poly_array122[] = {&p[24], &p[27], &p[69], &p[77], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array122, 6);
 	poly_sub(&C[3].vec[1],  &addition, &addition2);
 	
-	poly *poly_array115[] = {&p3, &p55, &p63, &p141, &p149};
+	poly *poly_array115[] = {&p[2], &p[54], &p[62], &p[140], &p[148]};
 	poly_sum(&addition, poly_array115, 5);
-	poly *poly_array123[] = {&p25, &p28, &p71, &p79, &p89, &p90};
+	poly *poly_array123[] = {&p[24], &p[27], &p[70], &p[78], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array123, 6);
 	poly_sub(&C[3].vec[2],  &addition, &addition2);
 	
-	poly *poly_array116[] = {&p4, &p56, &p64, &p142, &p150};
+	poly *poly_array116[] = {&p[3], &p[55], &p[63], &p[141], &p[149]};
 	poly_sum(&addition, poly_array116, 5);
-	poly *poly_array124[] = {&p25, &p28, &p72, &p80, &p89, &p90};
+	poly *poly_array124[] = {&p[24], &p[27], &p[71], &p[79], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array124, 6);
 	poly_sub(&C[3].vec[3],  &addition, &addition2);
 	
-	poly *poly_array117[] = {&p5, &p57, &p65, &p143, &p151};
+	poly *poly_array117[] = {&p[4], &p[56], &p[64], &p[142], &p[150]};
 	poly_sum(&addition, poly_array117, 5);
-	poly *poly_array125[] = {&p25, &p28, &p73, &p81, &p89, &p90};
+	poly *poly_array125[] = {&p[24], &p[27], &p[72], &p[80], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array125, 6);
 	poly_sub(&C[3].vec[4],  &addition, &addition2);
 	
-	poly *poly_array118[] = {&p6, &p58, &p66, &p144, &p152};
+	poly *poly_array118[] = {&p[5], &p[57], &p[65], &p[143], &p[151]};
 	poly_sum(&addition, poly_array118, 5);
-	poly *poly_array126[] = {&p25, &p28, &p74, &p82, &p89, &p90};
+	poly *poly_array126[] = {&p[24], &p[27], &p[73], &p[81], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array126, 6);
 	poly_sub(&C[3].vec[5],  &addition, &addition2);
 	
-	poly *poly_array119[] = {&p7, &p59, &p67, &p145, &p153};
+	poly *poly_array119[] = {&p[6], &p[58], &p[66], &p[144], &p[152]};
 	poly_sum(&addition, poly_array119, 5);
-	poly *poly_array127[] = {&p25, &p28, &p75, &p83, &p89, &p90};
+	poly *poly_array127[] = {&p[24], &p[27], &p[74], &p[82], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array127, 6);
 	poly_sub(&C[3].vec[6],  &addition, &addition2);
 	
-	poly *poly_array120[] = {&p8, &p60, &p68, &p146, &p154};
+	poly *poly_array120[] = {&p[7], &p[59], &p[67], &p[145], &p[153]};
 	poly_sum(&addition, poly_array120, 5);
-	poly *poly_array128[] = {&p25, &p28, &p76, &p84, &p89, &p90};
+	poly *poly_array128[] = {&p[24], &p[27], &p[75], &p[83], &p[88], &p[89]};
 	poly_sum(&addition2, poly_array128, 6);
 	poly_sub(&C[3].vec[7],  &addition, &addition2);
 }
@@ -1115,10 +709,11 @@ int crypto_sign(uint8_t *sm,
 }
 
 // 8*7*4 batch sign 
-int crypto_sign_signature_20_2(uint8_t *sig,
-                          size_t *siglen,
+int crypto_sign_signature_20_2(uint8_t *sigs[],
+                          size_t *siglens,
                           uint8_t* msgs[],
                           size_t mlens[],
+						  poly p[],
                           const uint8_t *sk)
 	{
 
@@ -1141,18 +736,6 @@ int crypto_sign_signature_20_2(uint8_t *sig,
   uint8_t **mus = malloc(sizeof(uint8_t*) * 20);
   uint8_t **rhoprimes = malloc(sizeof(uint8_t*) * 20);
   
-  
-	uint8_t** sigs = malloc(sizeof(uint8_t*) * 20);
-	size_t* siglens = malloc(sizeof(size_t) * 20);
-
-	for (int i = 0; i < 20; ++i) {
-		sigs[i] = malloc(sizeof(uint8_t) * (CRYPTO_BYTES + mlens[i]));
-		size_t copy_position = CRYPTO_BYTES;
-		size_t num_bytes_to_copy = mlens[i];
-		memcpy(sigs[i] + copy_position, msgs[i], num_bytes_to_copy);
-		siglens[i] = CRYPTO_BYTES + mlens[i];
-	}
-
   polyvecl ys[BATCH_SIZE];
   polyvecl zs[BATCH_SIZE], m_zs[20];
   polyveck w1s[BATCH_SIZE];
@@ -1160,6 +743,7 @@ int crypto_sign_signature_20_2(uint8_t *sig,
   poly cps[BATCH_SIZE];
   
   int waitList[20] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+  int passList[20] = {-1};
   int size = 20;
 
   for (int i =0;i<20;i++){
@@ -1191,7 +775,7 @@ rej:
   }
 
   /* Matrix-vector multiplication */
-  mult_p874(w1s, mat, zs);
+  mult_p874(w1s, mat, zs, p);
 
   for (int i = 0; i<BATCH_SIZE; i++){
     polyveck_reduce(&w1s[i]);
@@ -1276,7 +860,6 @@ rej:
 	// 	printf("\n");
 	// }
 
-
 	// Sign the remaining messages with the original algorithm
 	for (int k=0;k<size;k++){
 		crypto_sign(sigs[waitList[k]], &siglens[waitList[k]], msgs[waitList[k]], mlens[waitList[k]], sk);
@@ -1285,12 +868,12 @@ rej:
   /* Free allocated memory */
 	if (size < BATCH_SIZE){
 		for (int i =0;i<20;i++){
-			free(sigs[i]);
 			free(rhoprimes[i]);
 			free(mus[i]);
 		}
-		free(siglens);
 		free(states);
+		free(rhoprimes);
+		free(mus);
 	}
   	return 0;
 }

@@ -1,0 +1,4 @@
+reduce.c:15:9:pqcrystals_dilithium5_ref_montgomery_reduce	8	static
+reduce.c:33:9:pqcrystals_dilithium5_ref_reduce32	8	static
+reduce.c:50:9:pqcrystals_dilithium5_ref_caddq	8	static
+reduce.c:65:9:pqcrystals_dilithium5_ref_freeze	8	static

@@ -1,0 +1,2 @@
+symmetric-shake.c:6:6:pqcrystals_dilithium3_ref_dilithium_shake128_stream_init	48	static
+symmetric-shake.c:18:6:pqcrystals_dilithium3_ref_dilithium_shake256_stream_init	48	static

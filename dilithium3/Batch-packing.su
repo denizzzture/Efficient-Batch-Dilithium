@@ -1,0 +1,6 @@
+packing.c:15:6:pqcrystals_dilithium3_ref_pack_pk	32	static
+packing.c:38:6:pqcrystals_dilithium3_ref_unpack_pk	32	static
+packing.c:65:6:pqcrystals_dilithium3_ref_pack_sk	48	static
+packing.c:112:6:pqcrystals_dilithium3_ref_unpack_sk	64	static
+packing.c:156:6:pqcrystals_dilithium3_ref_pack_sig	48	static
+packing.c:198:5:pqcrystals_dilithium3_ref_unpack_sig	48	static

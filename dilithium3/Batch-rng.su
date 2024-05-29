@@ -1,0 +1,7 @@
+rng.c:26:1:seedexpander_init	8	static
+rng.c:105:6:handleErrors	16	static
+rng.c:61:1:seedexpander	96	static
+rng.c:116:1:AES256_ECB	64	static
+rng.c:189:1:AES256_CTR_DRBG_Update	160	static
+rng.c:139:1:randombytes_init	80	static
+rng.c:156:1:randombytes	128	static

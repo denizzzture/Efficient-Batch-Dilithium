@@ -1,0 +1,4 @@
+batch.c:29:1:fprintBstr	48	static
+batch.c:43:6:hexStringToUint_8_a	48	static
+batch.c:50:6:messageGeneration	256	static
+batch.c:85:5:main	54304	static

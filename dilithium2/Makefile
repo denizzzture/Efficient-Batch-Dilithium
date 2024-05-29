@@ -173,7 +173,7 @@ PQCgenKAT_sign2: PQCgenKAT_sign.c rng.c rng.h $(KECCAK_SOURCES) \
 
 Batch: batch.c rng.c rng.h $(KECCAK_SOURCES) \
 	  $(KECCAK_HEADERS)
-	        $(CC) $(NISTFLAGS) -DDILITHIUM_MODE=2 \
+	        $(CC) $(NISTFLAGS) -fstack-usage -DDILITHIUM_MODE=2 \
 			          -o $@ $< rng.c $(KECCAK_SOURCES) $(LDFLAGS) -lcrypto
 					  
 PQCgenKAT_sign3: PQCgenKAT_sign.c rng.c rng.h $(KECCAK_SOURCES) \

@@ -1,0 +1,2 @@
+ntt.c:49:6:pqcrystals_dilithium5_ref_ntt	96	static
+ntt.c:77:6:pqcrystals_dilithium5_ref_invntt_tomont	96	static

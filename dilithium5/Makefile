@@ -168,7 +168,7 @@ test/test_mul: test/test_mul.c randombytes.c $(KECCAK_SOURCES) $(KECCAK_HEADERS)
 
 Batch: batch.c rng.c rng.h $(KECCAK_SOURCES) \
   $(KECCAK_HEADERS)
-	$(CC) $(NISTFLAGS) -DDILITHIUM_MODE=5 \
+	$(CC) $(NISTFLAGS) -fstack-usage -DDILITHIUM_MODE=5 \
 	  -o $@ $< rng.c $(KECCAK_SOURCES) $(LDFLAGS) -lcrypto
 
 PQCgenKAT_sign2: PQCgenKAT_sign.c rng.c rng.h $(KECCAK_SOURCES) \

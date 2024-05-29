@@ -1,0 +1,2 @@
+speed_print.c:8:12:cmp_uint64	8	static
+speed_print.c:31:6:print_results	64	static
