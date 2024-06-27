@@ -10,8 +10,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 
-
+#define BATCH_SIZE 4
 void poly_sum(poly *result, poly *poly_array[], unsigned int n) {
     unsigned int i, j;
     
@@ -21,6 +22,7 @@ void poly_sum(poly *result, poly *poly_array[], unsigned int n) {
             result->coeffs[i] += poly_array[j]->coeffs[i]; 
         }
     }
+	
 }
 
 int mult_p4_str(polyveck C[K], polyvecl mat[K], polyvecl s1hats[K]){
@@ -772,7 +774,7 @@ rej:
 		crypto_sign(sigs[waitList[k]], &siglens[waitList[k]], msgs[waitList[k]], mlens[waitList[k]], sk);
   }
 
-	// If one want to print the signatures can uncomment below loops
+	// If one wants to print the signatures can uncomment below loops
 	// for (int i = 0; i<20;i++){
 	// 	printf("sig %d:", i);
 	// 	for (int p = 0; p<siglens[i];p++)
@@ -968,7 +970,6 @@ int crypto_sign_verify(const uint8_t *sig,
   polyvecl mat[K], z;
   polyveck t1, w1, h;
   keccak_state state;
-
   if(siglen != CRYPTO_BYTES)
     return -1;
 
@@ -992,7 +993,7 @@ int crypto_sign_verify(const uint8_t *sig,
 
   polyvecl_ntt(&z);
   polyvec_matrix_pointwise_montgomery(&w1, mat, &z);
-
+//   printf("%d\n", w1.vec[3].coeffs[0]);
   poly_ntt(&cp);
   polyveck_shiftl(&t1);
   polyveck_ntt(&t1);
@@ -1020,6 +1021,113 @@ int crypto_sign_verify(const uint8_t *sig,
   return 0;
 }
 
+int* crypto_sign_verify_batch(uint8_t *sigs[],
+                          size_t siglen,
+                          size_t mlens[],
+                       const uint8_t *pk,
+					   poly p[])
+{
+  unsigned int i;
+  uint8_t buf[K*POLYW1_PACKEDBYTES];
+  uint8_t rho[SEEDBYTES];
+  uint8_t mu[CRHBYTES];
+  uint8_t c[SEEDBYTES];
+  uint8_t c2[SEEDBYTES];
+  int* status = (int*)malloc(sizeof(int)*N_MSG);
+  poly cp;
+  polyvecl mat[K], z;
+  polyveck t1, w1, h, t2;
+  keccak_state state;
+  uint8_t **mus = malloc(sizeof(uint8_t*) * N_MSG);
+  uint8_t **cs = malloc(sizeof(uint8_t*) * N_MSG);
+  poly cps[N_MSG];
+  uint8_t **c2s = malloc(sizeof(uint8_t*) * N_MSG);
+  polyveck w1s[N_MSG];
+  polyveck hs[N_MSG];
+  polyvecl zs[N_MSG];
+  polyveck new_w1s[BATCH_SIZE];
+  polyvecl new_zs[BATCH_SIZE];
+
+  unpack_pk(rho, &t1, pk);
+  
+  for (int i=0;i<N_MSG;i++){
+		mus[i] = malloc(sizeof(uint8_t*) * CRHBYTES);
+		cs[i] = malloc(sizeof(uint8_t*) * SEEDBYTES);
+		c2s[i] = malloc(sizeof(uint8_t*) * SEEDBYTES);
+		status[i] = 1;
+		if(siglen != CRYPTO_BYTES){
+			status[i] = -1;
+			continue;
+		}
+		if(unpack_sig(cs[i], &zs[i], &hs[i], sigs[i])){
+			status[i] = -1;
+			continue;
+		}
+		if(polyvecl_chknorm(&zs[i], GAMMA1 - BETA)){
+			status[i] = -1;
+			continue;
+		}
+		/* Compute CRH(H(rho, t1), msg) state? */ 
+		shake256(mus[i], SEEDBYTES, pk, CRYPTO_PUBLICKEYBYTES);
+		shake256_init(&state);
+		shake256_absorb(&state, mus[i], SEEDBYTES);
+		shake256_absorb(&state, sigs[i] + CRYPTO_BYTES, mlens[i]);
+		shake256_finalize(&state);
+		shake256_squeeze(mus[i], CRHBYTES, &state);
+		/* Matrix-vector multiplication; compute Az - c2^dt1 */
+		poly_challenge(&cps[i], cs[i]);
+  	}
+  
+	polyvec_matrix_expand(mat, rho);
+	polyveck_shiftl(&t1);
+	polyveck_ntt(&t1);
+  
+  	for (int i=0;i<N_MSG;i++){
+		polyvecl_ntt(&zs[i]);
+	}
+  	for (int i=0;i<N_MSG;i+=BATCH_SIZE){
+		mult_p4(&w1s[i], mat, &zs[i], p); // batch multiplication
+		//mult_p4_str(&w1s[i], mat, &zs[i]);
+	}
+	for (int i = N_MSG%BATCH_SIZE; i>0;i--){
+		polyvec_matrix_pointwise_montgomery(&w1s[N_MSG - i], mat, &zs[N_MSG - i]); // remaining
+	}
+	for (int i=0;i<N_MSG;i++){
+		poly_ntt(&cps[i]);
+		polyveck_pointwise_poly_montgomery(&t2, &cps[i], &t1);
+		polyveck_sub(&w1s[i], &w1s[i], &t2);
+		polyveck_reduce(&w1s[i]);
+		polyveck_invntt_tomont(&w1s[i]);
+
+		/* Reconstruct w1 */
+		polyveck_caddq(&w1s[i]);
+		polyveck_use_hint(&w1s[i], &w1s[i], &hs[i]);
+		polyveck_pack_w1(buf, &w1s[i]);
+		/* Call random oracle and verify challenge */
+		shake256_init(&state);
+		shake256_absorb(&state, mus[i], CRHBYTES); 
+		shake256_absorb(&state, buf, K*POLYW1_PACKEDBYTES);
+		shake256_finalize(&state);
+		shake256_squeeze(c2s[i], SEEDBYTES, &state);
+		for(int j = 0; j < SEEDBYTES; ++j){
+			if(cs[i][j] != c2s[i][j]){
+				status[i] = -1;
+			}
+		}
+		if (status[i] != -1){
+			status[i]  = 0;
+		}
+  }
+  for (int i =0;i<N_MSG;i++){
+		free(cs[i]);
+		free(c2s[i]);
+		free(mus[i]);
+  }
+	free(cs);
+	free(c2s);
+	free(mus);
+	return status;
+}
 
 /*************************************************
 * Name:        crypto_sign_open
@@ -1063,4 +1171,37 @@ badsig:
     m[i] = 0;
 
   return -5;
+}
+  
+void crypto_sign_open_batch(uint8_t *ms[],
+                     size_t *mlens,
+                     uint8_t *sms[],
+                     size_t smlens[],
+                     const uint8_t *pk,
+					 poly p[])
+{
+  size_t i;
+  int *status;
+  for (int j=0;j<N_MSG;j++){
+	if(smlens[j] < CRYPTO_BYTES){
+		mlens[j] = -1;
+		for(i = 0; i < smlens[j]; ++i)
+			ms[j][i] = 0;
+		printf("Failed\n");
+	}			
+	mlens[j] = smlens[j] - CRYPTO_BYTES;
+  }
+  status = crypto_sign_verify_batch(sms, CRYPTO_BYTES, mlens, pk, p);
+
+  for (int j=0;j<N_MSG;j++){
+	if (status[j] == -1){
+		printf("Failed\n");
+	}
+	else{
+		for(i = 0; i < mlens[j]; ++i)
+			ms[j][i] = sms[j][CRYPTO_BYTES + i];
+		//printf("Passed\n");
+	}
+  }
+  free(status);
 }

@@ -21,7 +21,7 @@
 #define KAT_DATA_ERROR      -3
 #define KAT_CRYPTO_FAILURE  -4
 
-#define NTESTS 2
+#define NTESTS 10000
 
 uint64_t t[NTESTS];
 
@@ -71,7 +71,7 @@ void messageGeneration(uint8_t** msgs, size_t mlens[]){
         "7BEDAFEBABBBFB863CE496475F54E69A905AFA45899C3D7C16CFC73E31597D2404AE7014612E4CBFA238EFAF5B396B0B7435ADA5DE817E013188C280423C68924E1FA2A33CA56E6B85B7CCA7F00D3A6151F0629C1B92A13573320E0025863BBA7F3EEB987EE1B1A6230B10765DFC1FEEA498AE4B83521188E7503B506259103CEFB370E3651B06DD4F08013FF3AB9E2430626B0BD584232948462D85C0F82DA07B96FC65F62A43CD2F132D1A1D691C085980DAD8796CCE2FA0B268395EAC3DA2CC400F30F75BE87316216980CE213B48651DDB9E294F8CDB2CA05D3F2A507E4A03E2849AA8062918AFB5BCE9E4C3ABF2FFD4751DDDCF08AB09E36A29B830F3BAC6FEEBEA084575472E6F4B239AF89965A72954769A83E391DE467934237B07D8884A6B14CAD034FBF9BD7531D50D742E234E227E1A2DAF77A2FFACC579525134B15186D81AE6E5538871024BD2897475D6EE5B11BC51EDBB928D98475073785A75B331BF3D2297165AE6CF95C3A05F06DF747498462054F58A5AC736F96014B1A8CDB319D030D06DAD9CAB2B913F35FC392E1FC4B027CDBE775D64B04F1076A7C8F44C360745F98E87B84C18AB76F84F373F635AF4C8A87DF08DD4507899BAD892FF8CC1EE534D3277B5B82095628B84A7D5582149CF46C50AA963B56B4B91966B106B4B2EAA45D83A10993E8F933370AB29C6606B7CCFC41B21C6B99F2B9AC643E24300B350FA199EC10E64E4AF19181F78E8C43B2FA796241DC42CC8992BDFCDC39E7BC41BE68CDCE4FBC47C996DB42E8249EEDC146C216B514430C705FC939B9EEF677AD87F9CEE3398551FA0DAF774302324A410F4A4F4FC035CFBE960B38C390441E92D9E5624A8745976BC88FA538E398712361B77AD4CA5FF038D9F6CE157EB8A6137420D4E57018275DCEEBC4E480A5D"
     };
 
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < N_MSG; i++) {
         mlens[i] = 33*(i+1);
         msgs[i] = malloc(mlens[i] * sizeof(uint8_t));
         if (msgs[i] == NULL) {
@@ -101,15 +101,16 @@ int main(){
         return KAT_CRYPTO_FAILURE;
      }
 
-    uint8_t** sigs = malloc(sizeof(uint8_t*) * 20);
-    size_t* siglens = malloc(sizeof(size_t) * 20);
-    uint8_t** msgs= malloc(sizeof(uint8_t*) * 20);
-    size_t mlens[20];
+    uint8_t** sigs = malloc(sizeof(uint8_t*) * N_MSG);
+    size_t* siglens = malloc(sizeof(size_t) * N_MSG);
+    uint8_t** msgs= malloc(sizeof(uint8_t*) * N_MSG);
+    uint8_t** msgs_verify= malloc(sizeof(uint8_t*) * N_MSG);
+    size_t mlens[N_MSG];
 
     // generate 20 messages
     messageGeneration(msgs, mlens);
 
-    for (int i = 0; i < 20; ++i) {
+    for (int i = 0; i < N_MSG; ++i) {
         sigs[i] = malloc(sizeof(uint8_t) * (CRYPTO_BYTES + mlens[i]));
         size_t copy_position = CRYPTO_BYTES;
         size_t num_bytes_to_copy = mlens[i];
@@ -124,29 +125,46 @@ int main(){
     }
     print_results("crypto_sign_signature_20:", t, NTESTS);
 
-    // verify sigs
-    for (int i =0;i<20;i++){
-        m = (uint8_t *)calloc(CRYPTO_BYTES + mlens[i], sizeof(uint8_t));
-        if (ret_val = crypto_sign_open(m, &mlens[i], sigs[i], siglens[i], pk) != 0) {
-            printf("crypto_sign_open returned <%d>\n", i);
-            return KAT_CRYPTO_FAILURE;
+    // verify sigs original
+    for(int i = 0; i < NTESTS; ++i) {
+        t[i] = cpucycles();
+        for (int i =0;i<N_MSG;i++){
+            m = (uint8_t *)calloc(CRYPTO_BYTES + mlens[i], sizeof(uint8_t));
+            if (ret_val = crypto_sign_open(m, &mlens[i], sigs[i], siglens[i], pk) != 0) {
+                printf("crypto_sign_open returned <%d>\n", i);
+                return KAT_CRYPTO_FAILURE;
+            }
+            free(m);
         }
-        free(m);
     }
+    print_results("crypto_sign_open:", t, NTESTS);
+    // verify batch verification
+    for(int i = 0; i < NTESTS; ++i) {
+        t[i] = cpucycles();
+        for (int i =0;i<N_MSG;i++){
+            msgs_verify[i] = (uint8_t *)calloc(CRYPTO_BYTES + mlens[i], sizeof(uint8_t));
+        }
+        crypto_sign_open_batch(msgs_verify, mlens, sigs, siglens, pk, p);
+        for (int i =0;i<N_MSG;i++){
+            free(msgs_verify[i]);
+        }
+    }
+    print_results("crypto_sign_open_batch:", t, NTESTS);
 
     // original sign message for NTESTS observations
     for(int i = 0; i < NTESTS; ++i) {
         t[i] = cpucycles();
-        for (int k=0;k<20;k++){
+        for (int k=0;k<N_MSG;k++){
             crypto_sign(sigs[k], &siglens[k], msgs[k], mlens[k], sk);
         }
     }
     print_results("crypto_sign:", t, NTESTS);
-
-    for (int i = 0; i < 20; i++) {
+    
+    for (int i = 0; i < N_MSG; i++) {
         free(msgs[i]);
 		free(sigs[i]);
     }
+    free(msgs_verify);
     free(msgs);
     free(siglens);
     free(sigs);
